@@ -1,4 +1,4 @@
-var display = document.querySelector('.display'),
+let display = document.querySelector('.display'),
 oprdisplay = document.querySelector('.oper-display'),
 numbers = document.querySelectorAll('.number'),
 operators = document.querySelectorAll('.operator'),
@@ -10,7 +10,7 @@ result,
 operator;
 
 
-var setNum = function() {
+let setNum = function() {
 	if(result) {
 		num1 = this.getAttribute('data-num');
 		result = "";
@@ -31,7 +31,7 @@ var setNum = function() {
 };
 
 
-var moveNum = function() {
+let moveNum = function() {
 	num2 = num1;
 	num1 = "";
 	operator = this.getAttribute("data");
@@ -40,7 +40,7 @@ var moveNum = function() {
 	equals.setAttribute('data-result','');
 };
 
-var displayNum = function() {
+let displayNum = function() {
 	num1 = parseFloat(num1);
 	num2 = parseFloat(num2);
 
@@ -97,7 +97,7 @@ var displayNum = function() {
 	num1 = result;
 };
 
-var clearAll = function() {
+let clearAll = function() {
 	num1 = '';
 	num2 = '';
 	display.innerHTML = '0';
@@ -107,11 +107,11 @@ var clearAll = function() {
 	display.style.lineHeight = "95px";
 };
 
-for (var i = 0, l = numbers.length; i < l; i++) {
+for (let i = 0, l = numbers.length; i < l; i++) {
 	numbers[i].onclick = setNum;
 };
 
-for (var i = 0, l = operators.length; i < l; i++) {
+for (let i = 0, l = operators.length; i < l; i++) {
 	operators[i].onclick = moveNum;
 
 };
